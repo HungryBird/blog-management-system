@@ -1,0 +1,24 @@
+{
+  "name": "management-system",
+  "version": "1.0.0",
+  "description": "react+nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/HungryBird/blog-management-system.git"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "mysql"
+  ],
+  "author": "hungrybird",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HungryBird/blog-management-system/issues"
+  },
+  "homepage": "https://github.com/HungryBird/blog-management-system#readme"
+}
