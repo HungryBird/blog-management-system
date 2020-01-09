@@ -2,6 +2,7 @@
   "name": "management-system",
   "version": "1.0.0",
   "description": "react+nodejs",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,12 +14,16 @@
   "keywords": [
     "react",
     "nodejs",
-    "mysql"
+    "mysql",
+    "blog"
   ],
   "author": "hungrybird",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HungryBird/blog-management-system/issues"
   },
-  "homepage": "https://github.com/HungryBird/blog-management-system#readme"
+  "homepage": "https://github.com/HungryBird/blog-management-system#readme",
+  "dependencies": {
+    "mime": "^2.4.4"
+  }
 }
