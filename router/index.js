@@ -12,12 +12,14 @@ function router(request, response) {
     else {
         target = pathname;
     }
-    const pathURL = path.join(process.cwd(), 'web', target);
+    let pathURL = path.join(process.cwd(), 'web', target);
     console.log('pathURL: ', pathURL)
     const MIME = mime.getType(pathURL);
     fs.readFile(pathURL, 'utf-8', function(err, data) {
         if(err && MIME === 'text/html') {
             target = 'blog/404.html';
+			pathURL = path.join(process.cwd(), 'web', target);
+			const res = fs.readFileSync(pathURL, 'utf-8');
             response.end(res);
         }
         else if (err) {
