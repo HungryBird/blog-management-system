@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/HungryBird/blog-management-system#readme",
   "dependencies": {
-    "mime": "^2.4.4"
+    "mime": "^2.4.4",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1"
   }
 }

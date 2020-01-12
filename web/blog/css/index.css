@@ -1,3 +1,10 @@
-body{
-    background: red;
+html,body,ul,ol,li,input{
+    margin: 0;
+    padding: 0;
+}
+form{
+
+}
+.form-item{
+    margin-bottom: 20px;
 }
