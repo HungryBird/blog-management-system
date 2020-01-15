@@ -17,6 +17,7 @@ function router(request, response) {
         }
         let pathURL = path.join(process.cwd(), 'web', target);
         MIME = mime(pathURL)
+        console.log('pathURL: ', pathURL)
         fs.readFile(pathURL, 'utf-8', function(err, data) {
             if(err && MIME === 'text/html') {
                 target = 'blog/404.html';
@@ -28,6 +29,24 @@ function router(request, response) {
             else if (err) {
                 response.writeHead(404, {'Content-type': MIME});
                 response.end();
+                return;
+            }
+            if(pathname === '/blog/logo.png' || pathname === '/blog/logo.jpg') {
+                console.log('进入这里')
+                response.writeHead(200, {'Content-type': MIME});
+                // var imageFilePath = pathname.substr(1);
+                var stream = fs.createReadStream(pathURL);
+                var responseData = [];//存储文件流
+                if (stream) {//判断状态
+                    stream.on( 'data', function( chunk ) {
+                        responseData.push( chunk );
+                    });
+                    stream.on( 'end', function() {
+                        var finalData = Buffer.concat( responseData );
+                        response.write( finalData );
+                        response.end();
+                    });
+                }
                 return;
             }
             response.writeHead(200, {'Content-type': MIME});
