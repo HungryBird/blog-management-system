@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>首页</title>
-    <link rel="icon" href="/blog/favicon.ico" mce_href="/blog/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/blog/css/index.css">
+    <link rel="icon" href="/test/favicon.ico" mce_href="/test/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/test/css/index.css">
     <style>
         .content{
             width: 800px;
@@ -16,8 +16,9 @@
         .bg{
             width: 200px;
             height: 200px;
-            background: url(/blog/logo.jpg);
-            background-color: red;
+            background: url(/test/logo.jpg);
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -33,11 +34,11 @@
             </div>
         </form>
         <button id="login">登录</button>
-        <img src="/blog/logo.png" />
+        <img src="/test/logo.png" />
         <div class="bg"></div>
     </div>
 </body>
-<script src="/blog/js/jquery-3.4.1.min.js"></script>
+<script src="/test/js/jquery-3.4.1.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#login').on('click', () => {

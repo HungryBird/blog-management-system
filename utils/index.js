@@ -2,7 +2,14 @@ const url = require('url');
 const querystring = require('querystring');
 const mime = require('mime');
 
+// 是否为跨域请求
+const isCORS = (request) => {
+    return request.method === 'OPTIONS';
+}
+
+// 获取参数
 const getParams = (request) => {
+    console.log('获取参数')
     return new Promise(resolve => {
         if (request.method === 'GET') {
             resolve(url.parse(request.url, true).query)
@@ -13,6 +20,7 @@ const getParams = (request) => {
                 chunk += data;
             });
             request.on('end', () => {
+                console.log('querystring.parse(chunk): ', querystring.parse(chunk))
                 resolve(querystring.parse(chunk))
             })
         }
@@ -81,6 +89,13 @@ const isEmpty = (data) => {
     return !data;
 }
 
+// 判断请求是否为图片
+const isImg = (url) => {
+    const arr = url.split('.');
+    const suffix = arr[arr.length - 1];
+    return ['png', 'jpg', 'jpeg', 'bmp', 'gif', 'webp', 'psd', 'svg', 'tiff', 'ico'].indexOf(suffix.toLowerCase()) !== -1;
+}
+
 module.exports = {
     getParams,
     getLowerCase,
@@ -88,4 +103,6 @@ module.exports = {
     getUpperCase,
     isEmpty,
     getMime,
+    isImg,
+    isCORS,
 }
