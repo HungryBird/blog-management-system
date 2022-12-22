@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/HungryBird/blog-management-system#readme",
   "dependencies": {
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mime": "^2.4.4",
     "moment": "^2.24.0",
     "mysql": "^2.17.1"
